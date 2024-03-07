@@ -43,7 +43,7 @@ app.get('/lo', async (req, res) => {
         .catch((err) => res.json(err)); 
 });
 
-app.listen(port, () => console.log(`Server is running on port ${port}`)); 
+app.listen(port, () => console.log(`Machine is running on port ${port}`)); 
 
 
 //MONGO_URI= mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority
