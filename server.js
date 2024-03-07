@@ -19,26 +19,26 @@ mongoose.connect(process.env.MONGO_URL)
 
 //Routes 
 app.get('/lo', async (req, res) => { 
-    const allTasks = await lo.find();
-    res.json(allTasks)
+    const allObservations = await lo.find();
+    res.json(allObservations)
   });
  
  app.post('/lo/new', async (req,res) => {
-     const newTask = await lo.create(req.body);
-     res.status(200).json({newTask})
+     const newObservation = await lo.create(req.body);
+     res.status(200).json({newObservation})
  })
  
  app.delete('/lo/delete/:id', async(req,res)=>{
-     const result = await lo.findByIdAndDelete(req.params.id)
-     res.json(result)
+     const deleteObservation = await lo.findByIdAndDelete(req.params.id)
+     res.json(deleteObservation)
  }) 
 
  app.post("/lo/new/:id", async(req, res) => { 
     const id = req.params.id; 
-    const updateData = { 
+    const updateObservation = { 
         status: req.body.status, 
     }; 
-    lo.findByIdAndUpdate(id, updateData) 
+    lo.findByIdAndUpdate(id, updateObservation) 
         .then((observation) => res.json(observation)) 
         .catch((err) => res.json(err)); 
 });
