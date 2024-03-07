@@ -39,7 +39,7 @@ app.get('/lo', async (req, res) => {
         status: req.body.status, 
     }; 
     lo.findByIdAndUpdate(id, updateData) 
-        .then((todo) => res.json(todo)) 
+        .then((observation) => res.json(observation)) 
         .catch((err) => res.json(err)); 
 });
 
